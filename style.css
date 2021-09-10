@@ -1,0 +1,135 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* aligns it center on the horizontal axis */
+  align-items: center;
+  /* aligns content center on the vertical axis */
+  background-color: whitesmoke;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+
+.calculator {
+  background: white;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.6);
+}
+
+/* Display */
+.calculator-display {
+  background: black;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px 10px 0 0;
+}
+
+.calculator-display h1 {
+  margin: 0;
+  padding: 25px;
+  font-size: 45px;
+  font-family: "Lucida Console", sans-serif;
+  font-weight: 100;
+  overflow-x: auto;
+  /* horizontal scroll bar appears if necessary */
+}
+
+/* Custon Scroll Bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Button */
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 colums, 1 fraction */
+  gap: 10px;
+  /* space in-between each column */
+  padding: 10px;
+}
+
+button {
+  min-height: 50px;
+  font-size: 20px;
+  font-weight: 100;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: rgba(199, 199, 199);
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  transform: translateY(1px);
+  /* TranslateY = the up and down value. Goes up 1 pixel */
+}
+
+button:focus {
+  outline: none;
+  /* gets rid of the outline/border that appears on-click */
+}
+
+.operator {
+  background: grey;
+  color: white;
+  font-size: 30px;
+}
+
+operator:hover {
+  color: grey;
+}
+
+.equal-sign {
+  grid-column: -2;
+  grid-row: 2 / span 4;
+  /* starts in column 2 and spans 4 rows */
+  background: rgb(13, 206, 87);
+}
+
+.clear {
+  background: rgb(255, 62, 62);
+  color: white;
+}
+
+.clear:hover {
+  filter: brightness(90%);
+}
+
+/* Media Query: Large Smartphone (Vertical Orientation) */
+
+@media screen and (max-width: 600px) {
+  /* Anything less than 600px will be affected */
+  .calculator {
+    width: 95%;
+  }
+}
